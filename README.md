@@ -1,0 +1,1 @@
+A model that makes use of the DecisionTree supervised algorithm to detect a malicious login attempt. The optimal accuracy of the model was about 83%, and it was deployed using a simple flask web application
