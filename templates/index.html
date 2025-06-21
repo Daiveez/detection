@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Intrusion Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Cybersecurity Intrusion Detection</h1>
+        <form action="/predict" method="POST">
+            <!-- Client Name Field -->
+            <div class="form-group">
+                <label for="client_name">Client Name:</label>
+                <input type="text" id="client_name" name="client_name" placeholder="Enter client name" required>
+            </div>
+
+            <!-- Login Attempts -->
+            <div class="form-group">
+                <label for="login_attempts">Login Attempts:</label>
+                <input type="number" id="login_attempts" name="login_attempts" placeholder="Enter number of login attempts" required>
+            </div>
+
+            <!-- Session Duration -->
+            <div class="form-group">
+                <label for="session_duration">Session Duration (seconds):</label>
+                <input type="number" step="0.01" id="session_duration" name="session_duration" placeholder="Enter session duration" required>
+            </div>
+
+            <!-- Failed Logins -->
+            <div class="form-group">
+                <label for="failed_logins">Failed Logins:</label>
+                <input type="number" id="failed_logins" name="failed_logins" placeholder="Enter number of failed logins" required>
+            </div>
+
+            <!-- Browser Type -->
+            <div class="form-group">
+                <label for="browser_type">Browser Type:</label>
+                <select id="browser_type" name="browser_type" required>
+                    <option value="" disabled selected>Select browser type</option>
+                    {% for browser in original_browser %}
+                        <option value="{{ browser }}">{{ browser }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <!-- Unusual Time Access -->
+            <div class="form-group">
+                <label for="unusual_time_access">Unusual Time Access (0 or 1):</label>
+                <input type="number" id="unusual_time_access" name="unusual_time_access" min="0" max="1" placeholder="Enter 0 or 1" required>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group">
+                <button type="submit">Predict</button>
+            </div>
+        </form>
+
+        <!-- Display Prediction Result -->
+        {% if prediction_text %}
+            <div class="result">
+                <h2>Prediction Result for {{ client_name }}:</h2>
+                <p>{{ prediction_text }}</p>
+                <p>Threat Level: {{ threat_level }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

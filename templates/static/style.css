@@ -1,0 +1,101 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container */
+.container {
+    background-color: #ffffff;
+    padding: 40px; /* Increased padding */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 450px; /* Slightly wider container */
+    text-align: center;
+}
+
+/* Heading */
+h1 {
+    margin-bottom: 30px; /* Increased margin */
+    font-size: 32px; /* Larger font size */
+    color: #333333;
+}
+
+/* Form Group */
+.form-group {
+    margin-bottom: 25px; /* Increased margin */
+    text-align: left;
+}
+
+/* Form Labels */
+label {
+    display: block;
+    margin-bottom: 10px; /* Increased margin */
+    font-weight: bold;
+    color: #555555;
+    font-size: 16px; /* Larger font size */
+}
+
+/* Form Inputs */
+input, select {
+    width: 100%;
+    padding: 12px; /* Increased padding */
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 16px; /* Larger font size */
+    color: #333333;
+    background-color: #f9f9f9;
+    margin-bottom: 10px; /* Added margin */
+}
+
+input:focus, select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Submit Button */
+button {
+    width: 100%;
+    padding: 15px; /* Increased padding */
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px; /* Larger font size */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px; /* Added margin */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Prediction Result */
+.result {
+    margin-top: 30px; /* Increased margin */
+    padding: 20px; /* Increased padding */
+    background-color: #e9f5ff;
+    border-radius: 5px;
+    border: 1px solid #007bff;
+    text-align: left;
+}
+
+.result h2 {
+    margin-bottom: 15px; /* Increased margin */
+    font-size: 24px; /* Larger font size */
+    color: #007bff;
+}
+
+.result p {
+    margin: 0;
+    font-size: 18px; /* Larger font size */
+    color: #333333;
+}
